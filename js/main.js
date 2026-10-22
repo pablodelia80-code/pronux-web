@@ -17,7 +17,12 @@
 
   /* menú del celular */
   var burger=$("burger"),mnav=$("mnav");
-  if(burger&&mnav)burger.addEventListener("click",function(){var open=burger.getAttribute("aria-expanded")!=="true";burger.setAttribute("aria-expanded",String(open));burger.setAttribute("aria-label",open?"Cerrar menú":"Abrir menú");mnav.hidden=!open});
+  if(burger&&mnav){
+    var setMenu=function(open){burger.setAttribute("aria-expanded",String(open));burger.setAttribute("aria-label",open?"Cerrar menú":"Abrir menú");mnav.hidden=!open};
+    burger.addEventListener("click",function(){setMenu(burger.getAttribute("aria-expanded")!=="true")});
+    mnav.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){setMenu(false)})});
+    document.addEventListener("keydown",function(e){if(e.key==="Escape")setMenu(false)});
+  }
 
   /* escritura rotativa del inicio */
   var tEl=$("typed");

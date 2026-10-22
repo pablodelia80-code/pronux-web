@@ -13,6 +13,12 @@
   var page=(location.pathname.split("/").pop()||"index.html").replace(".html","")||"index";
   document.querySelectorAll(".nav-links a").forEach(function(a){if(a.getAttribute("href").replace(".html","")===page)a.classList.add("active")});
 
+  document.querySelectorAll(".mnav a:not(.btn)").forEach(function(a){if(a.getAttribute("href").replace(".html","")===page)a.classList.add("active")});
+
+  /* menú del celular */
+  var burger=$("burger"),mnav=$("mnav");
+  if(burger&&mnav)burger.addEventListener("click",function(){var open=burger.getAttribute("aria-expanded")!=="true";burger.setAttribute("aria-expanded",String(open));burger.setAttribute("aria-label",open?"Cerrar menú":"Abrir menú");mnav.hidden=!open});
+
   /* escritura rotativa del inicio */
   var tEl=$("typed");
   if(tEl&&!reduce){

@@ -438,3 +438,16 @@ footer svg{height:26px;width:auto}
 footer nav{display:flex;gap:18px;flex-wrap:wrap}
 footer nav a{text-decoration:none}
 footer nav a:hover{color:var(--ink)}
+
+/* menú del celular */
+.burger{display:none;width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.03);cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.burger span{width:20px;height:2px;border-radius:2px;background:var(--ink);transition:transform .25s,opacity .25s}
+.burger[aria-expanded=true] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded=true] span:nth-child(2){opacity:0}
+.burger[aria-expanded=true] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mnav{display:grid;gap:4px;padding:8px max(20px,env(safe-area-inset-right,0px)) 20px max(20px,env(safe-area-inset-left,0px));border-top:1px solid var(--line);background:var(--night)}
+.mnav a{text-decoration:none;font-family:var(--f-display);font-stretch:112%;font-weight:800;font-size:22px;padding:10px 0;border-bottom:1px solid var(--line)}
+.mnav a.active{color:var(--blue-soft)}
+.mnav .btn{margin-top:14px;justify-content:center;font-family:var(--f-body);font-size:16px;border-bottom:0}
+@media (max-width:900px){.burger{display:flex}.nav-cta{display:none}}
+@media (min-width:901px){.mnav{display:none!important}}

@@ -8,7 +8,12 @@
 <meta property="og:title" content="Trabajos · ProNux">
 <meta property="og:description" content="Webs a medida que ya están funcionando: Promuebles, iGNUX y Pausa Quántica.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="img/pronux-icono-512.png">
+<meta property="og:image" content="https://pronux.netlify.app/img/og-pronux.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://pronux.netlify.app/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="apple-touch-icon" href="img/pronux-icono-512.png">
 <meta name="theme-color" content="#0B1229">
 <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,8 +36,13 @@
       <a href="planes.html">Planes</a>
       <a href="contacto.html">Contacto</a>
     </nav>
-    <a class="btn btn-primary mag" href="contacto.html">Pedí tu propuesta</a>
+    <a class="btn btn-primary mag nav-cta" href="contacto.html">Pedí tu propuesta</a>
+    <button class="burger" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button>
   </div>
+  <nav class="mnav" id="mnav" aria-label="Menú" hidden>
+    <a href="index.html">Inicio</a><a href="servicios.html">Servicios</a><a href="trabajos.html">Trabajos</a><a href="nosotros.html">Nosotros</a><a href="planes.html">Planes</a><a href="contacto.html">Contacto</a>
+    <a class="btn btn-primary" href="contacto.html">Pedí tu propuesta</a>
+  </nav>
 </header>
 <main>
 <section class="sec" id="trabajos">
